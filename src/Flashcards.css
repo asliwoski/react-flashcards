@@ -1,0 +1,62 @@
+.Flashcards--card--container{
+    margin: 2em 0;
+}
+
+.Flashcards--header{
+    opacity: 0;
+    position: absolute;
+    transform: translateX(-10000px);
+}
+
+.Flashcards--card{
+    opacity: 0;
+    position: absolute;
+    transform: translateX(-10000px);
+
+    margin: 0 auto;
+    width: 500px;
+    max-width: 100%;
+    height: 300px;
+    max-height: 75%;
+    overflow-y: auto;
+
+    padding: 2em 1em;
+    box-sizing: border-box;
+}
+
+.Flashcards--card.Flashcards--card--current{
+    opacity: 1;
+    position: static;
+    transform: translateX(0);
+    transition: opacity 1s;
+
+    background-color: lightblue;
+    border: 1px solid slateblue;
+}
+
+.Flashcards--card .Flashcards--card--front{
+    opacity: 1;
+    position: static;
+    transform: translateX(0);
+    transition: opacity 1s;
+}
+
+
+.Flashcards--card .Flashcards--card--back{
+    opacity: 0;
+    position: absolute;
+    transform: translateX(-10000px);
+}
+
+.Flashcards--card.Flashcards--card--back--active .Flashcards--card--front{
+    opacity: 0;
+    position: absolute;
+    transform: translateX(-10000px);
+}
+
+.Flashcards--card.Flashcards--card--back--active .Flashcards--card--back{
+    opacity: 1;
+    position: static;
+    transform: translateX(0);
+    transition: opacity 1s;
+}
