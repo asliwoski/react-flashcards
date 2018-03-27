@@ -12,6 +12,12 @@ class Flashcards extends Component {
         front: true,
     };
 
+    actions = {
+        flip: this.flip.bind(this),
+        back: this.back.bind(this),
+        forward: this.forward.bind(this),
+    };
+
     constructor(props){
         super(props);
     }
@@ -66,10 +72,10 @@ class Flashcards extends Component {
                 <div className='Flashcards--card--container'>
                 {this.props.data.map((item, index, arr) => (
                     <div
-                        data-test="card-container"
+                        data-test="card"
                         key={index}
                         className={this.cardClasses(index)}
-                        onClick={this.flip.bind(this)}>
+                        onClick={this.actions.flip}>
                         <div
                             className="Flashcards--card--front"
                             data-test="card-front">
@@ -84,17 +90,17 @@ class Flashcards extends Component {
                 </div>
                 <button
                     className="Flashcards--controls--flip"
-                    onClick={this.flip.bind(this)}
+                    onClick={this.actions.flip}
                     data-test="flip-button">
                     flip</button>
                 <button
                     className="Flashcards--controls--back"
-                    onClick={this.back.bind(this)}
+                    onClick={this.actions.back}
                     data-test="back-button">
                     back</button>
                 <button
                     className="Flashcards--controls--forward"
-                    onClick={this.forward.bind(this)}
+                    onClick={this.actions.forward}
                     data-test="forward-button">
                     forward</button>
             </section>
